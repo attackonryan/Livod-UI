@@ -42,8 +42,9 @@ npm run dev
 |  Modal   |       13        |      10      |  👌  |
 | Dropdown |       10        |      4       |  👌  |
 | message  |        8        |      6       |  👌  |
-|  Button  |        9        |      1       |  ✍️  |
+| Popover  |        6        |      2       |  ✍️  |
 | Tooltip  |        4        |      2       |  ✍️  |
+|  Button  |        9        |      1       |  ✍️  |
 |  Table   |       32        |      1       |  ✍️  |
 |  Input   |       15        |      1       |  ✍️  |
 
