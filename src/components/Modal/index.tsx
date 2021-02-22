@@ -105,6 +105,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
         disabled={cancelButtonProps.disabled}
         key="default-cancel"
         onClick={onCancel}
+        type="default"
       >
         {cancelText}
       </Button>,

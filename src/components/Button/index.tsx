@@ -3,7 +3,7 @@ import "./style/index.less";
 
 interface ButtonProps {
   /** Button组件的类型 */
-  type?: "primary" | "danger";
+  type?: "primary" | "danger" | "default";
   /** 点击事件 */
   onClick?: (event: MouseEvent) => void;
   children?: any;
