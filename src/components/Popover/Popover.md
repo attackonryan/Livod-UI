@@ -50,3 +50,36 @@ const content = (
   </Popover>
 </>;
 ```
+
+使用 click 触发的 Popover
+
+```jsx
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+);
+<Popover content={content} trigger="click" title="I’m placed to the top">
+  <a>click top</a>
+</Popover>;
+```
+
+可交互的 Popover
+
+```jsx
+import React, { useState } from "react";
+import { Button } from "../../index.ts";
+const [count, setCount] = useState(0);
+const content = (
+  <div>
+    <Button style={{ fontSize: "12px" }} onClick={() => setCount(count + 1)}>
+      click me
+    </Button>
+    <p style={{ fontSize: "14px" }}>count is {count}</p>
+  </div>
+);
+<Popover trigger="click" content={content} placement="top" title="增加数字">
+  <a>click top</a>
+</Popover>;
+```
