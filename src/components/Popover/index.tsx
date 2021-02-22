@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 import Overlay from "react-overlays/Overlay";
 import "./style/index.less";
 
@@ -14,6 +14,8 @@ interface PopoverProps {
   style?: React.CSSProperties;
   /** Popover自定义样式 */
   popoverStyle?: React.CSSProperties;
+  /** 触发方式 */
+  trigger?: "click" | "hover";
 }
 
 const Popover: React.FC<PopoverProps> = ({
@@ -23,6 +25,7 @@ const Popover: React.FC<PopoverProps> = ({
   style,
   popoverStyle,
   content,
+  trigger = "hover",
 }) => {
   const triggerRef = useRef(null);
   const containerRef = useRef(null);
@@ -38,13 +41,28 @@ const Popover: React.FC<PopoverProps> = ({
       containerRef.current.querySelector(".livod-popover").style.zIndex = 99;
     }
   }, [show]);
+
+  const getEventObj = useMemo(() => {
+    switch (trigger) {
+      case "click":
+        return {
+          onClick: handleShow,
+        };
+      case "hover":
+        return {
+          onMouseEnter: handleShow,
+          onMouseLeave: handleHide,
+        };
+      default:
+        break;
+    }
+  }, [trigger]);
   return (
     <div className="flex flex-col items-center" ref={containerRef}>
       {React.cloneElement(children as React.ReactElement, {
         ref: triggerRef,
-        onMouseEnter: handleShow,
-        onMouseLeave: handleHide,
         style,
+        ...getEventObj,
       })}
       <Overlay
         show={show}
