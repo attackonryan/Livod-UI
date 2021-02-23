@@ -19,6 +19,10 @@ npm install livod-ui
 import { Modal } from "livod-ui";
 ```
 
+### 在线文档
+
+[Livod-UI 文档](https://livod.gitee.io/livod-ui/)
+
 ### 阅读文档
 
 ```js
