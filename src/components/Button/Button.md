@@ -10,10 +10,16 @@ import { Button } from "livod-ui";
 <Button>Push Me</Button>
 ```
 
-danger 类型的 Button
+type=danger 类型的 Button
 
 ```js
 <Button type="danger">Push Me</Button>
+```
+
+size=small 类型的 Button
+
+```js
+<Button size="small">Push Me</Button>
 ```
 
 loading 状态的 Button
