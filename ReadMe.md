@@ -45,14 +45,15 @@ npm run dev
 | :------: | :-------------: | :----------: | :--: |
 |  Modal   |       13        |      10      |  👌  |
 | Dropdown |       10        |      4       |  👌  |
-| message  |        8        |      6       |  👌  |
-| Popover  |        6        |      2       |  ✍️  |
-| Tooltip  |        4        |      2       |  ✍️  |
-|  Button  |        9        |      1       |  ✍️  |
-|  Table   |       32        |      1       |  ✍️  |
-|  Input   |       15        |      1       |  ✍️  |
+| Checkbox |        6        |      5       |  👌   |
+| message  |        8        |      6       |  👌   |
+| Popover  |        6        |      2       |  ✍️   |
+| Tooltip  |        4        |      2       |  ✍️   |
+|  Button  |        9        |      1       |  ✍️   |
+|  Table   |       32        |      1       |  ✍️   |
+| Input | 15 | 1 | ✍️ |
 
-### 细节区别（只有已完成的组件会提供细节区别）
+### 细节区别
 
 ### Modal
 
@@ -104,19 +105,8 @@ import { Dropdown, DropdownMenu as Menu } from "livod-ui";
 | **placement** | 与 ant-design 不同，livod-ui 提供了八种可选的 placement 值 | "up"\| "upEnd"\| "down"\| "downEnd"\| "left"\| "leftEnd"\| "right"\| "rightEnd" | "down"  |
 |  **trigger**  | 与 ant-design 不同，trigger 属性只需要提供一个字符串       | "contextMenu" \| "click"                                                        | "click" |
 
-### message
 
-未实现案例
 
-- 2 列 3 行(更新消息内容)
-- 2 列 4 行(通过 Hooks 获取上下文)
+>  **更多API区别请参考文档**
 
-描述
 
-更新消息内容可通过 state 实现相同效果，用户可控，因此不提供此案例实现。
-
-通过 Hooks 获取上下文暂不提供。
-
-#### API 区别
-
-本 API 无任何区别
