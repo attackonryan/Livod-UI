@@ -42,9 +42,12 @@ function Confirm(props: ConfirmOptions) {
   };
   // 这里有处理promise的情况
   // 细节基于原生DOM，需要优化
+  // promise用于防止多次点击添加多个span
+  let promise;
   const handleOk = (event: React.MouseEvent) => {
+    if (promise) return;
     if (props.onOk) {
-      const promise: any = props.onOk(event);
+      promise = props.onOk(event);
       if (promise instanceof Promise) {
         let loadingEl = document.createElement("span");
         loadingEl.className = "livod-loading";
@@ -54,9 +57,11 @@ function Confirm(props: ConfirmOptions) {
         );
         promise.then(() => {
           setShow(false);
+          promise = null;
         });
       } else {
         setShow(false);
+        promise = null;
       }
     } else {
       setShow(false);
