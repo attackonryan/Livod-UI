@@ -58,10 +58,15 @@ const label = `${state.checked ? "Checked" : "Unchecked"}-${
     </Checkbox>
   </p>
   <p>
-    <Button type="primary" onClick={toggleChecked}>
+    <Button type="primary" onClick={toggleChecked} size="small">
       {!state.checked ? "Check" : "Uncheck"}
     </Button>
-    <Button style={{ margin: "0 10px" }} type="primary" onClick={toggleDisable}>
+    <Button
+      style={{ margin: "0 10px" }}
+      type="primary"
+      onClick={toggleDisable}
+      size="small"
+    >
       {!state.disabled ? "Disable" : "Enable"}
     </Button>
   </p>
@@ -127,7 +132,6 @@ function onChange(checkedValues) {
     onChange={onChange}
     checkAll={checkAll}
   />
-  <br />
   <br />
   <Button onClick={() => setCheckAll(!checkAll)}>toggle All</Button>
 </>;
