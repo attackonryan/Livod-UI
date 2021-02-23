@@ -7,6 +7,7 @@ import Input from "./components/Input";
 import Table from "./components/Table";
 import Tooltip from "./components/Tooltip";
 import Popover from "./components/Popover";
+import Checkbox from "./components/Checkbox";
 import "./style/index.less";
 
 const Message = message;
@@ -22,4 +23,5 @@ export {
   Table,
   Tooltip,
   Popover,
+  Checkbox,
 };
