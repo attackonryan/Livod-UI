@@ -83,7 +83,7 @@ const placementArr = [
       <Dropdown key={placement} overlay={Menu} placement={placement}>
         <Button
           onClick={(e) => e.preventDefault()}
-          style={{ marginLeft: "100px" }}
+          style={{ marginLeft: "100px", marginBottom: "10px" }}
         >
           {placement}
         </Button>
