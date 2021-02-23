@@ -1,4 +1,4 @@
-import React, { MouseEvent } from "react";
+import React, { MouseEvent, useMemo } from "react";
 import "./style/index.less";
 
 interface ButtonProps {
@@ -13,6 +13,8 @@ interface ButtonProps {
   disabled?: boolean;
   /** 自定义样式 */
   style?: Object;
+  /** size */
+  size?: "small" | "normal";
 }
 /**
  * @param type 传入type prop
@@ -24,15 +26,27 @@ function correctTypeProp(type: string) {
   const DANGER = "danger";
   switch (type) {
     case PRIMARY:
-      correctedType = PRIMARY;
+      correctedType = " " + PRIMARY;
       break;
     case DANGER:
-      correctedType = DANGER;
+      correctedType = " " + DANGER;
       break;
     default:
       correctedType = "";
   }
   return correctedType;
+}
+
+function correctSizeProp(size: string) {
+  let correctSize = "";
+  switch (size) {
+    case "small":
+      correctSize = " small";
+      break;
+    default:
+      correctSize = "";
+  }
+  return correctSize;
 }
 
 const Button: React.FC<ButtonProps> = React.forwardRef(
@@ -43,14 +57,21 @@ const Button: React.FC<ButtonProps> = React.forwardRef(
       disabled = false,
       loading = false,
       children,
+      size = "normal",
       ...rest
     },
     ref
   ) => {
+    const classname = useMemo(() => {
+      let cls = "livod-button";
+      cls += correctTypeProp(type);
+      cls += correctSizeProp(size);
+      return cls;
+    }, [type, size]);
     return (
       <button
         onClick={onClick}
-        className={"livod-button " + correctTypeProp(type)}
+        className={classname}
         disabled={disabled === true}
         ref={ref as any}
         {...rest}
