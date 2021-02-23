@@ -112,8 +112,6 @@ const Menu = (
   </Dropdown.Menu>
 );
 <Dropdown overlay={Menu} trigger="contextMenu">
-  <Button onClick={(e) => e.preventDefault()} style={{ marginLeft: "100px" }}>
-    click here to alert
-  </Button>
+  <Button onClick={(e) => e.preventDefault()}>click here to alert</Button>
 </Dropdown>;
 ```
