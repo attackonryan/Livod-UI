@@ -45,13 +45,14 @@ npm run dev
 | :------: | :-------------: | :----------: | :--: |
 |  Modal   |       13        |      10      |  👌  |
 | Dropdown |       10        |      4       |  👌  |
-| Checkbox |        6        |      5       |  👌   |
-| message  |        8        |      6       |  👌   |
-| Popover  |        6        |      2       |  ✍️   |
-| Tooltip  |        4        |      2       |  ✍️   |
-|  Button  |        9        |      1       |  ✍️   |
-|  Table   |       32        |      1       |  ✍️   |
-| Input | 15 | 1 | ✍️ |
+| Checkbox |        6        |      5       |  👌  |
+| message  |        8        |      6       |  👌  |
+|  Radio   |        9        |     4.5      |  ✍️  |
+| Popover  |        6        |      2       |  ✍️  |
+| Tooltip  |        4        |      2       |  ✍️  |
+|  Button  |        9        |      1       |  ✍️  |
+|  Table   |       32        |      1       |  ✍️  |
+|  Input   |       15        |      1       |  ✍️  |
 
 ### 细节区别
 
@@ -105,8 +106,4 @@ import { Dropdown, DropdownMenu as Menu } from "livod-ui";
 | **placement** | 与 ant-design 不同，livod-ui 提供了八种可选的 placement 值 | "up"\| "upEnd"\| "down"\| "downEnd"\| "left"\| "leftEnd"\| "right"\| "rightEnd" | "down"  |
 |  **trigger**  | 与 ant-design 不同，trigger 属性只需要提供一个字符串       | "contextMenu" \| "click"                                                        | "click" |
 
-
-
->  **更多API区别请参考文档**
-
-
+> **更多 API 区别请参考文档**
