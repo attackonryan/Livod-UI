@@ -1,0 +1,17 @@
+.livod-radio-wrapper {
+  cursor: pointer;
+  font-size: 14px;
+}
+input[type="radio"] {
+  cursor: pointer;
+}
+input[type="radio"]:disabled {
+  cursor: not-allowed;
+  & + span {
+    color: rgba(0, 0, 0, 0.25);
+    cursor: not-allowed;
+  }
+}
+.livod-radio-wrapper {
+  margin: 0 8px 0 0;
+}
