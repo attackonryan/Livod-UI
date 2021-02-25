@@ -1,6 +1,6 @@
 module.exports = function (config) {
   config.set({
-    frameworks: ["jasmine"],
+    frameworks: ["jasmine", "webpack"],
 
     files: ["__test__/**/*.spec.js"],
 
