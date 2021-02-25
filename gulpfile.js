@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const ts = require("gulp-typescript");
-const tsProject = ts.createProject("tsconfig.json");
+const tsProject = ts.createProject("tsconfig.json", { declaration: true });
 const merge = require("merge2");
 const less = require("gulp-less");
 const replace = require("gulp-replace");
