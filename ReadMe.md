@@ -19,17 +19,27 @@ npm install livod-ui
 import { Modal } from "livod-ui";
 ```
 
-### 在线文档
+
+
+### 阅读文档
 
 [Livod-UI 文档](https://livod.gitee.io/livod-ui/)
 
-### 阅读文档
+
+
+文档生成
 
 ```js
 npm run docs
 ```
 
-#### DEMO 运行
+运行单元测试
+
+```js
+npm run test
+```
+
+DEMO 运行
 
 > 不推荐
 
@@ -37,7 +47,7 @@ npm run docs
 npm run dev
 ```
 
-修改 demo 目录下的 index.tsx 入口文件即可。
+添加demo 文件夹，在目录下创建index.tsx和index.html文件即可
 
 ### 进度
 
