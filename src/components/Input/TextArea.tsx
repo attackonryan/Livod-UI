@@ -18,4 +18,5 @@ const OriginTextArea: React.FC<OriginTextAreaProps> = ({ ...rest }) => {
   );
 };
 
+OriginTextArea.displayName = "TextArea";
 export default OriginTextArea;

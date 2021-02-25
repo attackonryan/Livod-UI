@@ -73,5 +73,5 @@ const Table: React.FC<TableProps> = ({ columns, dataSource, className }) => {
     </table>
   );
 };
-
+Table.displayName = "Table";
 export default Table;

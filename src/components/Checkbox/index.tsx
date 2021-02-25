@@ -60,5 +60,6 @@ const Checkbox: typeof RawCheckbox & {
 } = RawCheckbox as any;
 
 Checkbox.Group = Group;
+Checkbox.displayName = "Checkbox";
 
 export default Checkbox;

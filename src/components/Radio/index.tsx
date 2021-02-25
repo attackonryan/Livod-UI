@@ -49,5 +49,5 @@ const Radio: typeof RawRadio & {
 } = RawRadio as any;
 
 Radio.Group = Group;
-
+Radio.displayName = "Radio";
 export default Radio;
