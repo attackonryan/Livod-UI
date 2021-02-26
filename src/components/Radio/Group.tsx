@@ -1,12 +1,6 @@
 import { Option } from "components/Checkbox/Group";
 import Radio from "./index";
-import React, {
-  ChangeEvent,
-  ReactElement,
-  ReactNode,
-  useRef,
-  useMemo,
-} from "react";
+import React, { ChangeEvent, ReactElement, ReactNode, useRef } from "react";
 
 interface GroupProps {
   children?: ReactNode;
@@ -26,20 +20,17 @@ const Group: React.FC<GroupProps> = ({
   let children2Render = Array.isArray(children) ? children : [children];
   if (options) {
     /** option优先 */
-    const optionList = useMemo<Option[]>(() => {
-      const list = [];
-      options.forEach((v) => {
-        let option = {} as any;
-        if (typeof v === "string") {
-          option.label = v;
-          option.value = v;
-          list.push(option);
-        } else {
-          list.push(v);
-        }
-      });
-      return list;
-    }, [options]);
+    const optionList = [];
+    options.forEach((v) => {
+      let option = {} as any;
+      if (typeof v === "string") {
+        option.label = v;
+        option.value = v;
+        optionList.push(option);
+      } else {
+        optionList.push(v);
+      }
+    });
     children2Render = optionList.map((v) => (
       <Radio disabled={v.disabled} value={v.value}>
         {v.label}
