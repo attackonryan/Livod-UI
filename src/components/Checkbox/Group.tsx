@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo } from "react";
 import Checkbox from "./index";
 interface GroupProps {
   options: string[] | Option[];
@@ -45,23 +45,20 @@ const Group: React.FC<GroupProps> = ({
     return list;
   }, [options]);
 
-  const refObj = optionList.reduce((pre, cur) => {
-    pre[cur.label] = useRef();
-    return pre;
-  }, {});
+  const refObj = {} as any;
 
   useEffect(() => {
     defaultValue.forEach((v) => {
-      refObj[v].current.check();
+      refObj[v].check();
     });
   });
 
   useEffect(() => {
     if (checkAll) {
-      Object.keys(refObj).forEach((key) => refObj[key].current.check(true));
+      Object.keys(refObj).forEach((key) => refObj[key].check(true));
       checkedSet = new Set(Object.keys(refObj));
     } else {
-      Object.keys(refObj).forEach((key) => refObj[key].current.check(false));
+      Object.keys(refObj).forEach((key) => refObj[key].check(false));
       checkedSet.clear();
     }
     onChange(Array.from(checkedSet));
@@ -75,7 +72,7 @@ const Group: React.FC<GroupProps> = ({
             key={v.label}
             value={v.value}
             onChange={handleChange}
-            ref={refObj[v.label]}
+            ref={(e) => (refObj[v.label] = e)}
             disabled={v.disabled}
           >
             {v.label}
