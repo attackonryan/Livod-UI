@@ -26,7 +26,7 @@ const RawRadio: React.FC<RawRadioProps> = ({
     if (defaultChecked) {
       RadioRef.current.checked = true;
     }
-  }, []);
+  }, [defaultChecked]);
   return (
     <label className="livod-radio-wrapper" style={style}>
       <input

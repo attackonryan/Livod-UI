@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { Modal } from "react-overlays";
 import SwitchIcon from "./SwitchIcon";
@@ -29,13 +29,13 @@ const OriginMessage: React.FC<any> = React.forwardRef(
   ({ timeout, tobeRemovedNode, type, msg, className, style }, ref) => {
     const [show, setShow] = useState(true);
     /* 原生DOM操作实现清除节点 */
-    const clearNode = () => {
+    const clearNode = useCallback(() => {
       (container as Element).removeChild(tobeRemovedNode);
       if ((container as Element).childNodes.length === 0) {
         container.parentNode.removeChild(container);
         container = null;
       }
-    };
+    }, [container, tobeRemovedNode]);
     React.useImperativeHandle(
       ref,
       () => ({

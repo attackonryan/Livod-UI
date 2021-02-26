@@ -119,7 +119,18 @@ export const Modal: React.FC<ModalProps> = (props) => {
         {okText}
       </Button>,
     ];
-  }, [footer, confirmLoading, onOk, onCancel]);
+  }, [
+    footer,
+    confirmLoading,
+    onOk,
+    onCancel,
+    cancelButtonProps,
+    okButtonProps,
+    okType,
+    okText,
+    cancelText,
+    ignoreCancel,
+  ]);
 
   /**
    * 对style进行处理

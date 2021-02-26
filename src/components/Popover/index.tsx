@@ -56,7 +56,7 @@ const Popover: React.FC<PopoverProps> = ({
       default:
         break;
     }
-  }, [trigger]);
+  }, [trigger, handleShow, handleHide]);
   return (
     <div className="flex flex-col items-center" ref={containerRef}>
       {React.cloneElement(children as React.ReactElement, {
