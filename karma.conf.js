@@ -5,7 +5,7 @@ module.exports = function (config) {
     files: ["__test__/**/*.spec.js"],
 
     preprocessors: {
-      "__test__/**/*.spec.js": ["webpack"],
+      "__test__/**/*.spec.js": ["webpack", "coverage"],
     },
     webpack: {
       devtool: "inline-source-map",
@@ -27,7 +27,7 @@ module.exports = function (config) {
         ],
       },
     },
-    reporters: ["progress"],
+    reporters: ["progress", "coverage"],
     webpackServer: {
       noInfo: true, //please don't spam the console when running in karma!
     },
